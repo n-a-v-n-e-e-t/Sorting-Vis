@@ -1,8 +1,8 @@
-let speed = 100; 
+let speed =1000; 
 const bubble = async () => {
     let bars = document.querySelectorAll('.bar');
     console.log(bars.length);
-    //console.log(bars);
+    console.log('bubble-called');
     const totalBars = bars.length;
     for(let i=0;i<totalBars-1;i++){
         for(let j=0;j<totalBars-i-1;j++){
@@ -13,7 +13,7 @@ const bubble = async () => {
                 await sleep(speed);
                 let temp = bars[j+1].style.height;
                 bars[j+1].style.height = bars[j].style.height;
-                bars[j].style.height = temp;
+                bars[j].style.height =  temp;
             }
             bars[j].style.background = '#458cff';
             bars[j+1].style.background = '#458cff';
