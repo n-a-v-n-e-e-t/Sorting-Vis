@@ -22,14 +22,20 @@ const createdivs = (arr) =>{
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
-        bar.innerHTML = i;
-        console.log(bar);
+        //console.log(bar);
         bars.appendChild(bar);
+        document.querySelector('#current-size').innerHTML=arr.length;
     }
-}
+ }
+
+ const displaySize = (size)=>{
+        document.querySelector('#current-size').innerHTML=size;
+ }
 
 const deletebars = () => {
     const bars = document.querySelector('#sorting-wrapper');
     bars.innerHTML='';
 }
+
 newBtn.addEventListener('click',genarray);
+genarray();

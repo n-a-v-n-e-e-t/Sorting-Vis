@@ -12,20 +12,30 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary justify-content-between ">
+    <nav class="navbar navbar navbar-dark bg-dark justify-content-between ">
         <a class="navbar-brand" href="#">Sorting Visualizer</a>
-        <button type="button" class="btn btn-success" id="gen-new-array">New Array</button>
-        <span id="size">Size
-            <input id="size_input" type="range" min="5" max="50" step=1 value=20>
-        </span>
-        <span id="speed">Speed
-            <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60>
-        </span>
+        <div class="nav-right">
+            <span id="size">Size
+                <input id="size_input" type="range" min="5" max="50" step=1 value=25 oninput="displaySize(this.value)"
+                    onchange="displaySize(this.value)">
+                </span>
+                <span id="speed">Speed
+                    <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60>
+                </span>
+            <button type="button" class="btn btn-success" id="gen-new-array">New Array</button>
+            </div>
     </nav>
 
     <div class="container">
-        <h1 class="text-center my-2">Sorting Visualizer</h1>
+        <h1 class="text-center my-4">Sorting Visualizer</h1>
+        <h3>Array Size : <span id='current-size'></span></h3>
         <div id="sorting-wrapper" class="flex-container my-4">
+        </div>
+        <div class="algo-btns text-center my-5">
+            <button type="button" class="btn btn-primary">Bubble</button>
+            <button type="button" class="btn btn-secondary">Selection</button>
+            <button type="button" class="btn btn-success">Insertion</button>
+            <button type="button" class="btn btn-danger">Merge</button>
         </div>
     </div>
 

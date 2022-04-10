@@ -8,8 +8,16 @@
    align-items: flex-end;
 }
 
+.nav-right{
+    color: white;
+}
+
+.bar{
+    text-transform: rotate(-90deg);
+}
+
 .flex-item{
-    background: pink;
+    background: #458cff;
     border: 1pt solid black;
 
     border-top-left-radius: 3px;
@@ -18,3 +26,5 @@
     transition: 0.1s all ease;
     margin: 2px;
 }
+
+
