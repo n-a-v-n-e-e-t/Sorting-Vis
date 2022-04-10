@@ -1,4 +1,5 @@
 const newBtn = document.getElementById('gen-new-array');
+let present_arr = []
 const genarray = () =>{
     let min = 10;
     let max = 200;
@@ -8,9 +9,14 @@ const genarray = () =>{
     for(let i=0;i<size;i++){
         arr.push(Math.floor(Math.random() * (max - min) + min));
     }
+    present_arr = arr;
     createdivs(arr);
 }
 
+// function to stop for ms time
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 const createdivs = (arr) =>{
     // clear existing divs if any
@@ -36,6 +42,7 @@ const deletebars = () => {
     const bars = document.querySelector('#sorting-wrapper');
     bars.innerHTML='';
 }
+
 
 newBtn.addEventListener('click',genarray);
 genarray();
