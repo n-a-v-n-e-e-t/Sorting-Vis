@@ -1,4 +1,8 @@
 const newBtn = document.getElementById('gen-new-array');
+const defaultColor = '#292E6C';
+const finalColor = '#5CC09D';
+const inProcessColor = '#4664AF';
+const minColor = '#18A5AC'
 let present_arr = []
 const genarray = () =>{
     let min = 10;
@@ -25,6 +29,7 @@ const createdivs = (arr) =>{
     for(let i=0;i<arr.length;i++){
         const bar = document.createElement("div");
         bar.style.height = `${arr[i]*2}px`;
+        bar.style.background = defaultColor;
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);

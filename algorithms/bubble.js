@@ -1,5 +1,6 @@
-let speed =1000; 
+let speed =500; 
 const bubble = async () => {
+    disableBtns();
     let bars = document.querySelectorAll('.bar');
     console.log(bars.length);
     console.log('bubble-called');
@@ -7,20 +8,24 @@ const bubble = async () => {
     for(let i=0;i<totalBars-1;i++){
         for(let j=0;j<totalBars-i-1;j++){
             // highlight the selected bars
-            bars[j].style.background = 'red';
-            bars[j+1].style.background = 'red';
+            bars[j].style.background = inProcessColor;
+            bars[j+1].style.background = inProcessColor;
+            await sleep(speed);
             if(parseInt(bars[j].style.height) > parseInt(bars[j+1].style.height)){
-                await sleep(speed);
+                //await sleep(speed);
                 let temp = bars[j+1].style.height;
                 bars[j+1].style.height = bars[j].style.height;
                 bars[j].style.height =  temp;
+                bars[j].style.background = minColor;
+                bars[j+1].style.background = minColor;
+                await sleep(speed);
             }
-            bars[j].style.background = '#458cff';
-            bars[j+1].style.background = '#458cff';
+            bars[j].style.background = defaultColor;
+            bars[j+1].style.background = defaultColor;
         }
-        bars[totalBars-i-1].style.background = 'green';
+        bars[totalBars-i-1].style.background = finalColor;
     }
-    bars[0].style.background = 'green';
+    bars[0].style.background = finalColor;
     sleep(speed);
 }
 
