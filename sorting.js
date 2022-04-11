@@ -1,7 +1,7 @@
 const newBtn = document.getElementById('gen-new-array');
 const defaultColor = '#292E6C';
-const finalColor = '#5CC09D';
-const inProcessColor = '#4664AF';
+const finalColor = '#228b22';
+const inProcessColor = '#e1ad01';
 const minColor = '#18A5AC'
 let present_arr = []
 const genarray = () =>{
@@ -25,6 +25,7 @@ function sleep(ms) {
 const createdivs = (arr) =>{
     // clear existing divs if any
     deletebars();
+    enableBtns();
     const bars = document.querySelector('#sorting-wrapper');
     for(let i=0;i<arr.length;i++){
         const bar = document.createElement("div");

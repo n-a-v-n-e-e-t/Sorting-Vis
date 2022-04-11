@@ -1,4 +1,4 @@
-let speed =500; 
+let speed =1000; 
 const bubble = async () => {
     disableBtns();
     let bars = document.querySelectorAll('.bar');
@@ -27,6 +27,7 @@ const bubble = async () => {
     }
     bars[0].style.background = finalColor;
     sleep(speed);
+    enableBtns();
 }
 
 document.querySelector('#bubbleSort').addEventListener('click',bubble);
