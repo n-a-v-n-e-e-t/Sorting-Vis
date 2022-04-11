@@ -1,6 +1,7 @@
 
 const selection = async () => {
     disableBtns();
+    enableStopbtn();
     let bars = document.querySelectorAll('.bar');
     console.log('selection called');
     console.log(bars.length);

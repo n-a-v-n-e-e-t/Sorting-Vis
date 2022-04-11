@@ -12,3 +12,17 @@ const enableBtns = () => {
         btn.disabled = false;
     })
 }
+
+const enableStopbtn = () =>{
+    document.querySelector('#stop-sorting').disabled = false;
+}
+const disableStopbtn = () =>{
+    document.querySelector('#stop-sorting').disabled = true;
+}
+const stopSort = () => {
+    genarray();
+    enableBtns();
+    disableStopbtn();
+}
+
+document.querySelector('#stop-sorting').addEventListener('click',stopSort);

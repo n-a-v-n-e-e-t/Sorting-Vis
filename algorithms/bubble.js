@@ -1,6 +1,7 @@
 let speed =1000; 
 const bubble = async () => {
     disableBtns();
+    enableStopbtn();
     let bars = document.querySelectorAll('.bar');
     console.log(bars.length);
     console.log('bubble-called');
