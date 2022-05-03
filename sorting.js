@@ -3,7 +3,6 @@ const defaultColor = '#292E6C';
 const finalColor = '#228b22';
 const inProcessColor = '#e1ad01';
 const minColor = '#18A5AC'
-let present_arr = []
 const genarray = () =>{
     let min = 10;
     let max = 200;
@@ -13,7 +12,6 @@ const genarray = () =>{
     for(let i=0;i<size;i++){
         arr.push(Math.floor(Math.random() * (max - min) + min));
     }
-    present_arr = arr;
     createdivs(arr);
 }
 

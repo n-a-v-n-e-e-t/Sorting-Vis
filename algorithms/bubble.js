@@ -3,8 +3,6 @@ const bubble = async () => {
     disableBtns();
     enableStopbtn();
     let bars = document.querySelectorAll('.bar');
-    console.log(bars.length);
-    console.log('bubble-called');
     const totalBars = bars.length;
     for(let i=0;i<totalBars-1;i++){
         for(let j=0;j<totalBars-i-1;j++){
