@@ -1,4 +1,3 @@
-let speed =1000; 
 const bubble = async () => {
     disableBtns();
     enableStopbtn();
@@ -9,15 +8,14 @@ const bubble = async () => {
             // highlight the selected bars
             bars[j].style.background = inProcessColor;
             bars[j+1].style.background = inProcessColor;
-            await sleep(speed);
+            await sleep(delay);
             if(parseInt(bars[j].style.height) > parseInt(bars[j+1].style.height)){
-                //await sleep(speed);
                 let temp = bars[j+1].style.height;
                 bars[j+1].style.height = bars[j].style.height;
                 bars[j].style.height =  temp;
                 bars[j].style.background = minColor;
                 bars[j+1].style.background = minColor;
-                await sleep(speed);
+                await sleep(delay);
             }
             bars[j].style.background = defaultColor;
             bars[j+1].style.background = defaultColor;
@@ -25,7 +23,7 @@ const bubble = async () => {
         bars[totalBars-i-1].style.background = finalColor;
     }
     bars[0].style.background = finalColor;
-    sleep(speed);
+    sleep(delay);
     enableBtns();
 }
 

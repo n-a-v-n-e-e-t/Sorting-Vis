@@ -3,7 +3,6 @@ const disableBtns = () =>{
     sortingbtns.forEach(element => {
             element.disabled = true;
     });
-    //console.log(sortingbtns);
 }
 
 const enableBtns = () => {

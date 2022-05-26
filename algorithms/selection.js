@@ -13,7 +13,7 @@ const selection = async () => {
         await sleep(speed)
         for(let j=i+1;j<totalBars;j++){
             bars[j].style.background = inProcessColor;
-            await sleep(speed);
+            await sleep(delay);
             if(parseInt(bars[j].style.height) < parseInt(min_idx_bar.style.height)){
                 
                 min_idx_bar.style.background = defaultColor;
@@ -25,7 +25,7 @@ const selection = async () => {
             }
         }
         // swapping
-        await sleep(150);
+        await sleep(delay);
         let temp = bars[i].style.height;
         bars[i].style.height = min_idx_bar.style.height;
         min_idx_bar.style.height = temp;
@@ -39,8 +39,3 @@ const selection = async () => {
 
 document.querySelector('#selectionSort').addEventListener('click',selection);
 
-
-// original -> blue
-// sorted   -> green
-// progress -> orange
-// mini -> red

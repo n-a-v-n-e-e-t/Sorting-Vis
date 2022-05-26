@@ -7,17 +7,16 @@ const insertion = async () => {
     console.log(bars.length);
     const totalBars = bars.length;
     bars[0].style.background = 'green';
-    //await sleep(speed);
     for(let i=1;i<totalBars;i++){
         let j = i-1;
         let key = bars[i].style.height;
         bars[i].style.background = 'blue';
-        await sleep(150);
+        await sleep(delay);
         while(j>=0 && (parseInt(bars[j].style.height) > parseInt(key))){
             bars[j].style.background = 'blue';
             bars[j+1].style.height = bars[j].style.height;
             j--;
-            await sleep(150);
+            await sleep(delay);
             for(let k = i;k >=0; k--){
                 bars[k].style.background = 'green';
             }

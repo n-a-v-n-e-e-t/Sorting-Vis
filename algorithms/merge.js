@@ -5,20 +5,20 @@ const merge = async (bars,low,mid,high) =>{
     let left = new Array(n1);
     let right = new Array(n2);
     for(let i = 0; i < n1; i++){
-        await sleep(200);
+        await sleep(delay);
         bars[low + i].style.background = 'orange';
         left[i] = bars[low + i].style.height;
     }
     for(let i = 0; i < n2; i++){
-        await sleep(200);
+        await sleep(delay);
         bars[mid + 1 + i].style.background = 'cyan';
         right[i] = bars[mid + 1 + i].style.height;
     }
-    await sleep(150);
+    await sleep(delay);
     let i = 0, j = 0, k = low;
     while(i < n1 && j < n2){
         
-        await sleep(150);
+        await sleep(delay);
         if(parseInt(left[i]) <= parseInt(right[j])){
             if((n1 + n2) === bars.length){
                 bars[k].style.background = 'green';
@@ -44,8 +44,7 @@ const merge = async (bars,low,mid,high) =>{
         }
     }
     while(i < n1){
-        
-        await sleep(200);
+        await sleep(delay);
         if((n1 + n2) === bars.length){
             bars[k].style.background = 'green';
         }
@@ -58,7 +57,7 @@ const merge = async (bars,low,mid,high) =>{
     }
     while(j < n2){
         
-        await sleep(200);
+        await sleep(delay);
         if((n1 + n2) === bars.length){
             bars[k].style.background = 'green';
         }
